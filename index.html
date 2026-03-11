@@ -1,53 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Responsive Landing Page</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>PRODIGY WD 01 — Interactive Navigation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <div id="toast">✓ Message sent successfully!</div>
+
+  <div class="task-badge" id="taskBadge">
+    <div class="task-badge-header" onclick="toggleBadge()">
+      <span class="task-badge-title">⚡ Task-01 Requirements</span>
+      <div class="task-toggle" id="taskToggle">−</div>
+    </div>
+    <div class="task-body">
+      <div class="task-label">Prodigy Infotech · PRODIGY_WD_01</div>
+      <p class="task-req">
+        <strong>Interactive Navigation Menu</strong> — changes color/style on scroll
+        and on hover. Fixed position, visible on all pages. HTML + CSS + JavaScript.
+      </p>
+      <div class="req-checks">
+        <div class="req-check"><span class="dot"></span> Fixed navbar on all pages ✓</div>
+        <div class="req-check"><span class="dot"></span> Color change on scroll ✓</div>
+        <div class="req-check"><span class="dot"></span> Hover effects on menu items ✓</div>
+        <div class="req-check"><span class="dot"></span> HTML structure ✓</div>
+        <div class="req-check"><span class="dot"></span> CSS styling ✓</div>
+        <div class="req-check"><span class="dot"></span> JavaScript interactivity ✓</div>
+        <div class="req-check"><span class="dot"></span> Responsive design ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-drawer" id="navDrawer">
+    <a href="#home"     onclick="closeDrawer()">Home</a>
+    <a href="#about"    onclick="closeDrawer()">About</a>
+    <a href="#services" onclick="closeDrawer()">Services</a>
+    <a href="#work"     onclick="closeDrawer()">Work</a>
+    <a href="#contact"  onclick="closeDrawer()">Contact</a>
+  </div>
+
   <nav id="navbar">
-    <div class="logo">MyBrand</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="hamburger" id="hamburger">&#9776;</div>
+    <a href="#home" class="logo">Pixel<span class="logo-dot"></span>Forge</a>
+    <div class="nav-center">
+      <a href="#home"     class="nav-link active">Home</a>
+      <a href="#about"    class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#work"     class="nav-link">Work</a>
+      <a href="#contact"  class="nav-link">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-status"><span class="status-dot"></span>Available</div>
+      <a href="#contact" class="nav-hire">Hire Us</a>
+      <div class="hamburger" id="hamburger" onclick="toggleDrawer()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="hero">
-    <h1>Welcome to MyBrand</h1>
-    <p>Building the future, one pixel at a time.</p>
-    <a href="#about" class="btn">Learn More</a>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section id="about" class="section">
-    <h2>About Us</h2>
-    <p>We are a passionate team creating amazing digital experiences.</p>
-  </section>
-
-  <!-- SERVICES SECTION -->
-  <section id="services" class="section dark">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <div class="card">🎨 UI/UX Design</div>
-      <div class="card">💻 Web Development</div>
-      <div class="card">📱 Mobile Apps</div>
+  <section id="home">
+    <div class="mesh"></div>
+    <div class="stars" id="stars"></div>
+    <div class="shape s1"></div><div class="shape s2"></div>
+    <div class="shape s3"></div><div class="shape s4"></div>
+    <div class="hero-inner">
+      <div class="hero-tag">🏆 Prodigy Infotech — Web Dev Internship 2026</div>
+      <h1 class="hero-h1">We Design<br><em>Digital Magic</em><br>That Converts</h1>
+      <p class="hero-p">A next-generation creative studio building blazing-fast, beautifully crafted websites and digital products for bold brands worldwide.</p>
+      <div class="hero-btns">
+        <a href="#work"    class="btn-main">Explore Our Work →</a>
+        <a href="#contact" class="btn-outline">💬 Start a Project</a>
+      </div>
+    </div>
+    <div class="scroll-cue">
+      <div class="mouse"><div class="mouse-dot"></div></div>
+      <span class="scroll-text">Scroll</span>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p>Email: hello@mybrand.com</p>
+  <div class="features-strip">
+    <div class="feature-item"><div class="feature-icon">⚡</div><div class="feature-text"><strong>Lightning Fast</strong><span>99 PageSpeed score</span></div></div>
+    <div class="feature-item"><div class="feature-icon">📱</div><div class="feature-text"><strong>Fully Responsive</strong><span>Every screen, perfectly</span></div></div>
+    <div class="feature-item"><div class="feature-icon">🎨</div><div class="feature-text"><strong>Pixel Perfect</strong><span>Award-winning design</span></div></div>
+    <div class="feature-item"><div class="feature-icon">🔒</div><div class="feature-text"><strong>Secure & Reliable</strong><span>99.9% uptime guaranteed</span></div></div>
+  </div>
+
+  <section id="about">
+    <div class="two-col">
+      <div>
+        <div class="chip reveal">✦ About PixelForge</div>
+        <h2 class="section-h reveal d1">We turn bold ideas<br>into reality</h2>
+        <p class="section-p reveal d2">We're an obsessive team of designers and developers who believe great digital products change everything. Every line of code is intentional, every pixel considered.</p>
+        <p class="section-p reveal d3">From scrappy startups to Fortune 500s — we've built digital experiences that leave lasting marks on industries and people alike.</p>
+        <br>
+        <a href="#contact" class="btn-main reveal d4" style="display:inline-flex;width:fit-content;">Let's Talk →</a>
+      </div>
+      <div class="about-visual reveal d2">
+        <div class="av-card"><span class="av-emoji">🚀</span><div class="av-title">Launch Ready</div><div class="av-desc">Concept to live site in record time without sacrificing quality.</div></div>
+        <div class="av-card"><span class="av-num">98%</span><div class="av-title">Client Satisfaction</div><div class="av-desc">Clients keep coming back.</div></div>
+        <div class="av-card span2"><span class="av-emoji">🏆</span><div class="av-title">Award Winning Studio</div><div class="av-desc">Recognized globally for design excellence and technical innovation across 12+ years.</div></div>
+      </div>
+    </div>
   </section>
+
+  <section id="services">
+    <div class="services-wrap">
+      <div class="sec-header reveal">
+        <div><div class="chip">✦ What We Do</div><h2 class="section-h" style="margin-bottom:0">Our services</h2></div>
+        <a href="#contact" class="btn-outline">View All</a>
+      </div>
+      <div class="services-grid">
+        <div class="svc reveal d1"><div class="svc-num">01</div><span class="svc-icon">🖥️</span><div class="svc-name">Web Design</div><p class="svc-desc">Interfaces that convert visitors into customers. Strategy-led, pixel-perfect execution.</p><div class="svc-arrow">↗</div></div>
+        <div class="svc reveal d2"><div class="svc-num">02</div><span class="svc-icon">⚙️</span><div class="svc-name">Development</div><p class="svc-desc">Clean, maintainable code for landing pages to complex web applications.</p><div class="svc-arrow">↗</div></div>
+        <div class="svc reveal d3"><div class="svc-num">03</div><span class="svc-icon">📱</span><div class="svc-name">Mobile Apps</div><p class="svc-desc">Native and cross-platform apps that feel right in your users' hands.</p><div class="svc-arrow">↗</div></div>
+        <div class="svc reveal d1"><div class="svc-num">04</div><span class="svc-icon">✦</span><div class="svc-name">Branding</div><p class="svc-desc">Strategy-led identity systems that give your brand a voice worth remembering.</p><div class="svc-arrow">↗</div></div>
+        <div class="svc reveal d2"><div class="svc-num">05</div><span class="svc-icon">📊</span><div class="svc-name">SEO & Analytics</div><p class="svc-desc">Data-driven growth strategies that bring the right audience to your doorstep.</p><div class="svc-arrow">↗</div></div>
+        <div class="svc reveal d3"><div class="svc-num">06</div><span class="svc-icon">☁️</span><div class="svc-name">Cloud & DevOps</div><p class="svc-desc">Scalable infrastructure with CI/CD pipelines and 99.9% uptime guarantees.</p><div class="svc-arrow">↗</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="chip reveal">✦ Portfolio</div>
+    <h2 class="section-h reveal d1">Selected work</h2>
+    <div class="work-grid">
+      <div class="work-card big reveal d1"><div class="work-thumb"><div class="wt-bg wt-1"></div><span class="wt-emoji">🌐</span></div><div class="work-info"><div class="work-cat">Web Platform</div><div class="work-name">FinTech Analytics Dashboard</div><div class="work-year">2025 · React, Node.js</div></div></div>
+      <div class="work-card reveal d2"><div class="work-thumb"><div class="wt-bg wt-2"></div><span class="wt-emoji">📱</span></div><div class="work-info"><div class="work-cat">Mobile App</div><div class="work-name">Health Tracker iOS</div><div class="work-year">2025 · Swift, Firebase</div></div></div>
+      <div class="work-card reveal d3"><div class="work-thumb"><div class="wt-bg wt-3"></div><span class="wt-emoji">✦</span></div><div class="work-info"><div class="work-cat">Brand Identity</div><div class="work-name">Luxury Brand Rebrand</div><div class="work-year">2024 · Identity, Motion</div></div></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-wrap">
+      <div class="chip reveal" style="display:inline-flex;">✦ Get In Touch</div>
+      <h2 class="section-h reveal d1">Let's build something great</h2>
+      <p class="section-p reveal d2">Ready to start your project? Fill out the form and we'll get back to you within 24 hours.</p>
+      <form class="contact-form reveal d3" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group"><label>Full Name</label><input type="text" placeholder="Your name" required/></div>
+          <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com" required/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Service</label><select><option>Web Design</option><option>Development</option><option>Mobile App</option><option>Branding</option><option>Other</option></select></div>
+          <div class="form-group"><label>Budget</label><select><option>$1k–$5k</option><option>$5k–$15k</option><option>$15k–$50k</option><option>$50k+</option></select></div>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your project..." required></textarea></div>
+        <button type="submit" class="form-submit" id="submitBtn"><span>Send Message</span><span>→</span></button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Pixel<span style="color:var(--accent)">●</span>Forge</div>
+    <p>© 2026 PixelForge Studio · Prodigy Infotech PRODIGY_WD_01</p>
+    <nav class="footer-nav">
+      <a href="#home">Home</a><a href="#about">About</a>
+      <a href="#services">Services</a><a href="#work">Work</a><a href="#contact">Contact</a>
+    </nav>
+  </footer>
 
   <script src="script.js"></script>
 </body>
